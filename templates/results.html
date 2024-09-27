@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/resultsStyle.css">
+    <title>Informe de Resultados</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='resources/logo.png') }}" class="cab" alt="logo">
+            </div>
+            <nav class="navegacion">
+                <a href="{{ url_for('home') }}">Inicio</a>
+                <a href="#">Información</a>
+                <a href="{{ url_for('info') }}">Enfermedades</a>
+                <a href="#">Contactos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Informe de Resultados</h1>
+            <p>{{predictions}}</p>
+        </section>
+        <section class="image-section">
+            <figure>
+                <img src="./static/uploads/{{display_image}}" alt="Resultado de la Imagen">
+            </figure>
+        </section>
+
+        {% if predictions == "BLEFARITIS" %}
+        <section class="details">
+            <h3>Detalles del Resultado</h3>
+            <ul>
+                <li><strong>Tipo de Blefaritis:</strong> Blefaritis anterior, etapa inicial.</li>
+                <li><strong>Áreas Afectadas:</strong> Principalmente los márgenes de los párpados.</li>
+                <li><strong>Grado de Severidad:</strong> Moderado, con irritación y enrojecimiento visibles.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Recomendaciones Médicas</h3>
+            <ul>
+                <li>Se recomienda una higiene diaria de los párpados para reducir la inflamación.</li>
+                <li>Aplicar compresas calientes para aliviar los síntomas y limpiar los párpados con un paño suave.</li>
+                <li>Considerar el uso de gotas o ungüentos antibióticos si la condición persiste.</li>
+                <li>Realizar un seguimiento regular con un oftalmólogo para monitorear el progreso y ajustar el tratamiento si es necesario.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Información Adicional</h3>
+            <ul>
+                <li><strong>Pronóstico:</strong> Con un tratamiento adecuado y una buena higiene, se espera una mejora significativa en los síntomas.</li>
+                <li><strong>Estadísticas Comparativas:</strong> En comparación con casos similares, este diagnóstico sugiere una intervención temprana beneficiosa para evitar complicaciones.</li>
+                <li><strong>Referencias:</strong> Consultar con el médico tratante para discutir opciones específicas de tratamiento y manejo.</li>
+            </ul>
+        </section>
+        {% endif %}        
+        
+
+        {% if predictions == "CATARATAS" %}
+        <section class="details">
+            <h3>Detalles del Resultado</h3>
+            <ul>
+                <li><strong>Tipo de Catarata:</strong> Catarata senil, etapa inicial.</li>
+                <li><strong>Áreas Afectadas:</strong> Principalmente en el área central del cristalino.</li>
+                <li><strong>Grado de Severidad:</strong> Moderado, con afectación parcial de la visión.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Recomendaciones Médicas</h3>
+            <ul>
+                <li>Se recomienda una evaluación más detallada con un oftalmólogo especializado para determinar el tratamiento adecuado.</li>
+                <li>Considerar opciones quirúrgicas si la progresión afecta significativamente la calidad de vida del paciente.</li>
+                <li>Mantener un seguimiento regular para monitorear la progresión de la catarata.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Información Adicional</h3>
+            <ul>
+                <li><strong>Pronóstico:</strong> Con tratamiento adecuado, se espera una mejora significativa en la visión.</li>
+                <li><strong>Estadísticas Comparativas:</strong> La intervención temprana suele ser beneficiosa para evitar una mayor pérdida de visión.</li>
+                <li><strong>Referencias:</strong> Consultar con el médico tratante para discutir opciones específicas de tratamiento y manejo de la catarata.</li>
+            </ul>
+        </section>
+        {% endif %}
+
+
+        {% if predictions == "CHALAZIÓN" %}
+        <section class="details">
+            <h3>Detalles del Resultado</h3>
+            <ul>
+                <li><strong>Tipo de Chalazión:</strong> Inflamación de una glándula sebácea en el párpado.</li>
+                <li><strong>Áreas Afectadas:</strong> Generalmente se localiza en el párpado superior o inferior.</li>
+                <li><strong>Grado de Severidad:</strong> Puede variar desde una pequeña protuberancia sin dolor hasta una hinchazón más grande que cause molestias.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Recomendaciones Médicas</h3>
+            <ul>
+                <li>Aplicar compresas tibias sobre el área afectada para aliviar la inflamación.</li>
+                <li>Evitar tocar o presionar el chalazión para prevenir infecciones.</li>
+                <li>Si el chalazión no mejora con tratamiento conservador, considerar una evaluación con un oftalmólogo para posibles opciones de drenaje o cirugía.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Información Adicional</h3>
+            <ul>
+                <li><strong>Pronóstico:</strong> La mayoría de los chalaziones se resuelven por sí solos con tratamiento adecuado, pero pueden requerir intervención médica en casos persistentes.</li>
+                <li><strong>Estadísticas Comparativas:</strong> Los chalaziones no son comunes en la población general, pero son tratados eficazmente con medidas adecuadas.</li>
+                <li><strong>Referencias:</strong> Consultar con un oftalmólogo para evaluar la necesidad de tratamiento adicional si los síntomas persisten.</li>
+            </ul>
+        </section>
+        {% endif %}        
+
+
+        {% if predictions == "CONJUTIVITIS" %}
+        <section class="details">
+            <h3>Detalles del Resultado</h3>
+            <ul>
+                <li><strong>Tipo de Conjuntivitis:</strong> Conjuntivitis infecciosa, alérgica o irritativa.</li>
+                <li><strong>Áreas Afectadas:</strong> Conjuntiva, la membrana que recubre el ojo y el interior del párpado.</li>
+                <li><strong>Grado de Severidad:</strong> Puede variar desde leve irritación hasta enrojecimiento intenso y secreción abundante.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Recomendaciones Médicas</h3>
+            <ul>
+                <li>Si es causada por infección, es importante seguir un tratamiento con antibióticos o antivirales según lo prescrito por un médico.</li>
+                <li>Para la conjuntivitis alérgica, se recomienda evitar alérgenos conocidos y usar antihistamínicos o gotas oftálmicas específicas.</li>
+                <li>Mantener una buena higiene ocular y evitar tocarse los ojos para prevenir la propagación de la infección.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Información Adicional</h3>
+            <ul>
+                <li><strong>Pronóstico:</strong> La conjuntivitis generalmente se resuelve con tratamiento adecuado en unas pocas semanas, pero es importante seguir las indicaciones médicas para evitar complicaciones.</li>
+                <li><strong>Estadísticas Comparativas:</strong> La conjuntivitis es común y suele tener un buen pronóstico con tratamiento adecuado.</li>
+                <li><strong>Referencias:</strong> Consultar con un oftalmólogo para un diagnóstico preciso y tratamiento adecuado.</li>
+            </ul>
+        </section>
+        {% endif %}
+
+
+        {% if predictions == "MELANOMA_OCULAR" %}
+        <section class="details">
+            <h3>Detalles del Resultado</h3>
+            <ul>
+                <li><strong>Tipo de Melanoma:</strong> Melanoma ocular, un tipo de cáncer que afecta la parte pigmentada del ojo.</li>
+                <li><strong>Áreas Afectadas:</strong> Generalmente se encuentra en la coroides, el cuerpo ciliar o la iris.</li>
+                <li><strong>Grado de Severidad:</strong> Puede variar desde etapas iniciales hasta avanzadas, dependiendo del tamaño y la diseminación del tumor.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Recomendaciones Médicas</h3>
+            <ul>
+                <li>Se recomienda una evaluación urgente con un oncólogo oftálmico para determinar el tratamiento más adecuado.</li>
+                <li>Las opciones de tratamiento pueden incluir cirugía, radioterapia o terapia fotodinámica, dependiendo del tamaño y la localización del melanoma.</li>
+                <li>Es crucial realizar un seguimiento regular para monitorizar la respuesta al tratamiento y detectar posibles recurrencias.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Información Adicional</h3>
+            <ul>
+                <li><strong>Pronóstico:</strong> El pronóstico varía según la etapa del melanoma y la respuesta al tratamiento; una detección temprana y tratamiento adecuado pueden mejorar significativamente las perspectivas.</li>
+                <li><strong>Estadísticas Comparativas:</strong> El melanoma ocular es raro, pero su pronóstico es generalmente más favorable cuando se detecta a tiempo.</li>
+                <li><strong>Referencias:</strong> Consultar con un especialista en oncología ocular para discutir las mejores opciones de tratamiento y manejo personalizado.</li>
+            </ul>
+        </section>
+        {% endif %}        
+
+
+        {% if predictions == "NORMALES" %}
+        <section class="details">
+            <h3>Detalles del Resultado</h3>
+            <ul>
+                <li><strong>Tipo de Diagnóstico:</strong> Sin anomalías detectadas; la imagen del ojo se encuentra dentro de los parámetros normales.</li>
+                <li><strong>Áreas Afectadas:</strong> No se han observado áreas afectadas en la imagen.</li>
+                <li><strong>Grado de Severidad:</strong> No aplicable, ya que no se han detectado anomalías.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Recomendaciones Médicas</h3>
+            <ul>
+                <li>No se requiere tratamiento específico en este momento.</li>
+                <li>Se recomienda realizar revisiones periódicas para mantener el seguimiento de la salud ocular.</li>
+                <li>Continúe con las visitas regulares al oftalmólogo para asegurar la salud ocular a largo plazo.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Información Adicional</h3>
+            <ul>
+                <li><strong>Pronóstico:</strong> La salud ocular es buena y no se esperan problemas en el corto plazo.</li>
+                <li><strong>Estadísticas Comparativas:</strong> La ausencia de anomalías es común en exámenes regulares.</li>
+                <li><strong>Referencias:</strong> Mantener una rutina de cuidado ocular y consultar al médico para cualquier cambio en la visión.</li>
+            </ul>
+        </section>
+        {% endif %}
+        
+
+        {% if predictions == "PTERIGIÓN" %}
+        <section class="details">
+            <h3>Detalles del Resultado</h3>
+            <ul>
+                <li><strong>Tipo de Enfermedad:</strong> Pterigion, crecimiento anormal de tejido en la superficie del ojo.</li>
+                <li><strong>Áreas Afectadas:</strong> Principalmente en la conjuntiva, extendiéndose hacia la córnea.</li>
+                <li><strong>Grado de Severidad:</strong> Variable; puede ser leve a moderado, con posible afectación de la visión si no se trata.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Recomendaciones Médicas</h3>
+            <ul>
+                <li>Se recomienda una evaluación con un oftalmólogo especializado para determinar el tratamiento adecuado.</li>
+                <li>En casos severos, considerar la posibilidad de una intervención quirúrgica para remover el pterigion y prevenir su recurrencia.</li>
+                <li>Utilizar lágrimas artificiales para aliviar molestias y proteger la superficie ocular.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Información Adicional</h3>
+            <ul>
+                <li><strong>Pronóstico:</strong> Con tratamiento adecuado, se puede lograr una recuperación completa y prevenir complicaciones futuras.</li>
+                <li><strong>Estadísticas Comparativas:</strong> La intervención temprana puede reducir la recurrencia y mejorar los resultados visuales.</li>
+                <li><strong>Referencias:</strong> Consultar con el oftalmólogo para discutir las mejores opciones de tratamiento y manejo.</li>
+            </ul>
+        </section>
+        {% endif %}
+        
+
+        {% if predictions == "RETINOBLASTOMA" %}
+        <section class="details">
+            <h3>Detalles del Resultado</h3>
+            <ul>
+                <li><strong>Tipo de Enfermedad:</strong> Retinoblastoma, un cáncer ocular pediátrico que afecta la retina.</li>
+                <li><strong>Áreas Afectadas:</strong> Principalmente la retina, con posible diseminación a estructuras oculares cercanas.</li>
+                <li><strong>Grado de Severidad:</strong> Generalmente grave, requiere atención médica urgente y tratamiento especializado.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Recomendaciones Médicas</h3>
+            <ul>
+                <li>Se recomienda una evaluación urgente con un oncólogo pediátrico y un oftalmólogo especializado en cáncer ocular.</li>
+                <li>Tratamientos pueden incluir quimioterapia, radioterapia, y en algunos casos, cirugía para remover el tumor.</li>
+                <li>Es crucial un seguimiento riguroso para monitorear la respuesta al tratamiento y la salud ocular general.</li>
+            </ul>
+        </section>
+        <section class="details">
+            <h3>Información Adicional</h3>
+            <ul>
+                <li><strong>Pronóstico:</strong> Con tratamiento adecuado y temprano, el pronóstico puede ser favorable, aunque depende de la etapa y extensión del cáncer.</li>
+                <li><strong>Estadísticas Comparativas:</strong> La intervención temprana y el tratamiento adecuado pueden mejorar significativamente los resultados a largo plazo.</li>
+                <li><strong>Referencias:</strong> Consultar con un equipo especializado en oncología pediátrica para opciones de tratamiento y manejo del retinoblastoma.</li>
+            </ul>
+        </section>
+        {% endif %}        
+
+        <button class="btn-imprimir no-print" onclick="window.print()">Imprimir</button>
+    </main>
+</body>
+</html>

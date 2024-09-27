@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/info.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Información de Enfermedades Oculares</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='resources/logo.png') }}" class="cab" alt="logo">
+            </div>
+            <nav class="navegacion">
+                <a href="{{ url_for('home') }}">Inicio</a>
+                <a href="#">Información</a>
+                <a href="{{ url_for('info') }}">Enfermedades</a>
+                <a href="#">Contactos</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="info-section">
+        <div class="info-container">
+            <div class="info-card">
+                <h3>BLEFARITIS</h3>
+                <p>La blefaritis es una inflamación de los párpados que suele afectar a la parte donde crecen las pestañas. Esta inflamación puede provocar irritación, picazón y enrojecimiento.</p>
+                <div class="info-image">
+                    <img src="{{ url_for('static', filename='resources/blefaritis.png') }}" alt="Blefaritis">
+                </div>
+            </div>
+            <div class="info-card">
+                <h3>CHALAZIÓN</h3>
+                <p>El chalazión es un pequeño bulto o quiste en el párpado, causado por la inflamación de una glándula sebácea obstruida.</p>
+                <div class="info-image">
+                    <img src="{{ url_for('static', filename='resources/chalazion.png') }}" alt="Chalazión">
+                </div>
+            </div>
+            <div class="info-card">
+                <h3>CONJUNTIVITIS</h3>
+                <p>La conjuntivitis es una inflamación o infección de la membrana transparente que recubre el párpado y la parte blanca del globo ocular. La conjuntivitis suele estar causada por una infección viral o bacteriana.</p>
+                <div class="info-image">
+                    <img src="{{ url_for('static', filename='resources/conjuntivitis.png') }}" alt="Conjuntivitis">
+                </div>
+            </div>
+            <div class="info-card">
+                <h3>MELANOMA OCULAR</h3>
+                <p>El melanoma ocular es un tipo de cáncer que se desarrolla en las células productoras de pigmento que dan color al ojo. Es la forma más común de cáncer de ojo en adultos.</p>
+                <div class="info-image">
+                    <img src="{{ url_for('static', filename='resources/melanoma.png') }}" alt="Melanoma Ocular">
+                </div>
+            </div>
+            <div class="info-card">
+                <h3>PTERIGIÓN</h3>
+                <p>El pterigión es un crecimiento benigno de tejido en la conjuntiva, que puede invadir la córnea y afectar la visión. Es común en personas expuestas a mucho sol y viento.</p>
+                <div class="info-image">
+                    <img src="{{ url_for('static', filename='resources/pterigion.png') }}" alt="Pterigión">
+                </div>
+            </div>
+            <div class="info-card">
+                <h3>RETINOBLASTOMA</h3>
+                <p>El retinoblastoma es un cáncer raro que se desarrolla en la retina, generalmente en niños. Es causado por una mutación genética que puede ser heredada.</p>
+                <div class="info-image">
+                    <img src="{{ url_for('static', filename='resources/retinoblastoma.png') }}" alt="Retinoblastoma">
+                </div>
+            </div>
+            <div class="info-card">
+                <h3>CATARATAS</h3>
+                <p>Las cataratas son una opacidad del cristalino del ojo, que puede causar visión borrosa y afectar la capacidad de ver detalles finos. Son comunes en personas mayores.</p>
+                <div class="info-image">
+                    <img src="{{ url_for('static', filename='resources/catarata.png') }}" alt="Cataratas">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

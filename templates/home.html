@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiHealth+</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homeStyle.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='resources/logo.png') }}" class="cab" alt="logo">
+            </div>
+            <nav class="navegacion">
+                <a href="{{ url_for('home') }}">Inicio</a>
+                <a href="{{ url_for('contacto') }}"">Información</a>
+                <a href="{{ url_for('info') }}">Enfermedades</a>
+                <a href="#">Contactos</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='resources/logo.png') }}" alt="logo" class="log">
+            <h3 class="logo-title">OptiHealth AI</h3>
+        </div>
+        <p class="main_text">Carga una foto de tus ojos para recibir un análisis detallado sobre posibles enfermedades oculares.</p>
+        
+        <div class="upload-section">
+            <div class="file-upload">
+                <form action="/results" method="POST" enctype="multipart/form-data">
+                    <label for="fileInput">
+                        <img src="{{ url_for('static', filename='resources/cargar_archivo.png') }}" alt="Upload Image">
+                        <p>Arrastra y suelta una imagen o haz clic para seleccionar</p>
+                    </label>
+                    <input type="file" name="file" id="fileInput">
+                    <br>
+                    <input type="submit" value="Consultar" class="submit-button">
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <!-- <p>Al utilizar este servicio, acepta nuestros Términos de servicio y Aviso de privacidad. Por favor, no envíe ninguna información personal; no somos responsables del contenido de su envío.</p> -->
+        <p>© 2024 OptiHealth+. Todos los derechos reservados. Al utilizar este servicio, acepta nuestros Términos de servicio y Aviso de privacidad.</p>
+        <p><a href="#">Términos de Servicio</a> | <a href="#">Aviso de Privacidad</a></p>
+    </footer>
+    <script>
+        // JavaScript to handle drag and drop functionality
+        const fileInput = document.getElementById('fileInput');
+        const fileUploadLabel = document.querySelector('.file-upload label');
+
+        fileUploadLabel.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            fileUploadLabel.classList.add('dragover');
+        });
+
+        fileUploadLabel.addEventListener('dragleave', () => {
+            fileUploadLabel.classList.remove('dragover');
+        });
+
+        fileUploadLabel.addEventListener('drop', (event) => {
+            event.preventDefault();
+            fileUploadLabel.classList.remove('dragover');
+            fileInput.files = event.dataTransfer.files;
+        });
+
+        fileUploadLabel.addEventListener('click', () => {
+            fileInput.click();
+        });
+    </script>
+</body>
+</html>
